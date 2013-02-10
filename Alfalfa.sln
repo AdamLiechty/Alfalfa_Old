@@ -1,14 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{A031F349-9D3E-4C20-8AFA-1EA571AE0056}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A825F7CF-D451-491F-ACA8-8FBBCB84E2B5}"
 	ProjectSection(SolutionItems) = preProject
-		api\api.js = api\api.js
-		api\start.cmd = api\start.cmd
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		app.js = app.js
+		package.json = package.json
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "routes", "routes", "{838BED69-2E97-4A89-8B7F-564CEA6F6273}"
+	ProjectSection(SolutionItems) = preProject
+		routes\index.js = routes\index.js
+		routes\user.js = routes\user.js
 	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{838BED69-2E97-4A89-8B7F-564CEA6F6273} = {A825F7CF-D451-491F-ACA8-8FBBCB84E2B5}
 	EndGlobalSection
 EndGlobal
