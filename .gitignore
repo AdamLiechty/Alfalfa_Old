@@ -15,3 +15,8 @@ npm-debug.log
 
 *.suo
 node_modules/
+*.xcworkspacedata
+
+*.xcuserstate
+
+.DS_Store
