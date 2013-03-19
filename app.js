@@ -106,25 +106,22 @@ myOAP.on('client_auth', function(client_id, client_secret, username, password, n
     return next(new Error('client authentication denied'));
 });
 
-/*
 app.configure(function(){
-  app.set("port", process.env.PORT || 3000);
+              
+  app.set("port", process.env.PORT || 8081);
   app.set("views", __dirname + "/views");
   app.set("view engine", "jade");
   app.use(express.favicon());
   app.use(express.logger("dev"));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
-  app.use(app.router);
+//  app.use(app.router);
   app.use(express.static(path.join(__dirname, "public")));
-
-
 });
 
 app.configure("development", function(){
   app.use(express.errorHandler());
 });
-*/
 
 //app.get("/", routes.index);
 
@@ -180,8 +177,9 @@ app.get('/secret', function(req, res, next) {
 });
 // /Oauth 2 Provider
 
-app.listen(8081, function() {
-    console.log("Express server listening on port " + 8081);
+var port = app.get("port");
+app.listen(port, function() {
+    console.log("Express server listening on port " + port);
 });
 /*
 var port = app.get("port");
