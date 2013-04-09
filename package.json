@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "express": "3.1.0",
+    "express-persona": "0.0.7",
     "less-middleware": "*",
     "jade": "*",
     "couchbase": "0.0.11"

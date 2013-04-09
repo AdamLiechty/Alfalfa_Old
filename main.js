@@ -4,6 +4,7 @@
  */
 
 var express = require('express')
+  , expressPersona = require("express-persona")
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
@@ -20,7 +21,9 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser('your secret here'));
-  app.use(express.session());
+  app.use(express.session({
+    secret: "mozillapersona"
+  }));
   app.use(app.router);
   app.use(require('less-middleware')({ src: __dirname + '/public' }));
   app.use(express.static(path.join(__dirname, 'public')));
@@ -28,6 +31,9 @@ app.configure(function(){
 
 app.configure('development', function(){
   app.use(express.errorHandler());
+  expressPersona(app, {
+    audience: "http://localhost:" + app.get("port")
+  })
 });
 
 app.get('/', routes.index);
